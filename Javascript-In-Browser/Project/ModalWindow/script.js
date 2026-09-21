@@ -29,3 +29,10 @@ for (let i = 0; i < btnOpenModal.length; i++) {
 btnCloseModal.addEventListener('click', closeModal);
 
 overlay.addEventListener('click', closeModal);
+
+// addEventListener for the modal to close when esc key is pressed. It's global event so we apply to the whole document not single element
+document.addEventListener('keydown', function (e) {
+    if(e.key === 'Escape' && !modal.classList.contains('hidden')) {
+        closeModal();
+    }
+})
